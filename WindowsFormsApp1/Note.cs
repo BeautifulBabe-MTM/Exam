@@ -5,8 +5,11 @@ namespace WindowsFormsApp1
 {
     class Note : Control
     {
-        Size _size;
-        Point _point;
-
+        public Note() : base()
+        {
+            this.Size = new Size(150, 150);
+            this.Location = new Point(20, 20);
+            this.BackColor = Color.DarkSeaGreen;
+        }
     }
 }
