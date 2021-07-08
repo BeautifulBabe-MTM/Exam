@@ -89,7 +89,6 @@ namespace WindowsFormsApp1
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(40, 21);
             this.comboBox1.TabIndex = 5;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -98,7 +97,6 @@ namespace WindowsFormsApp1
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(40, 21);
             this.comboBox2.TabIndex = 6;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // AddNoteForm
             // 
@@ -116,18 +114,16 @@ namespace WindowsFormsApp1
             this.Text = "Добавить заметку";
             this.ResumeLayout(false);
             this.PerformLayout();
+            for (int i = 0; i <= 24; i++)
+                this.comboBox1.Items.Add(i.ToString());
+            this.comboBox1.Text = "hours";
+            for (int i = 0; i <= 60; i++)
+                this.comboBox2.Items.Add(i.ToString());
+            
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
 
         #endregion
