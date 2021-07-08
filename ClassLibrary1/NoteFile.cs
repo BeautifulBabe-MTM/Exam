@@ -12,6 +12,7 @@ namespace ClassLibrary1
             bool res = false;
             if (note != null)
             {
+
                 try
                 {
                     if (File.Exists(path))
