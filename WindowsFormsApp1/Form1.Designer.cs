@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -32,13 +33,13 @@ namespace WindowsFormsApp1
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.note = new WindowsFormsApp1.Note();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.note = new WindowsFormsApp1.Note();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,14 +52,6 @@ namespace WindowsFormsApp1
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(237, 408);
             this.panel1.TabIndex = 0;
-            // 
-            // note
-            // 
-            this.note.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.note.Location = new System.Drawing.Point(15, 20);
-            this.note.Name = "note";
-            this.note.Size = new System.Drawing.Size(200, 200);
-            this.note.TabIndex = 0;
             // 
             // monthCalendar1
             // 
@@ -95,6 +88,7 @@ namespace WindowsFormsApp1
             this.button2.TabIndex = 4;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += Button2_Click;
             // 
             // button3
             // 
@@ -116,6 +110,15 @@ namespace WindowsFormsApp1
             this.button4.Size = new System.Drawing.Size(55, 44);
             this.button4.TabIndex = 6;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // note
+            // 
+            this.note.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.note.Location = new System.Drawing.Point(15, 20);
+            this.note.Name = "note";
+            this.note.Size = new System.Drawing.Size(200, 200);
+            this.note.TabIndex = 0;
             // 
             // Form1
             // 
@@ -138,10 +141,23 @@ namespace WindowsFormsApp1
 
         }
 
-        private void Button1_Click(object sender, System.EventArgs e)
+        
+
+        private void Button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"{this.textBox1.Text}","Lox");
             
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.ShowDialog();
+        }
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            AddNoteForm addNote = new AddNoteForm();
+            addNote.ShowDialog();
         }
         Note note;
         #endregion
