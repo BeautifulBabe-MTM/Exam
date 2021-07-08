@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ClassLibrary1
 {
-    class Manager
+    public class Manager
     {
         public static List<Note> notes { get; private set; } = new List<Note>();
         public static void CreateNote(string noteName, string text, DateTime creationData)

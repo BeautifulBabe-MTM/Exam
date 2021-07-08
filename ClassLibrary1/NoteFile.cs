@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace ClassLibrary1
 {
-    class NoteFile
+    public class NoteFile
     {
         public static bool SaveNote(string path, Note note)
         {
